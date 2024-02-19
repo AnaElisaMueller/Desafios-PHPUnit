@@ -42,7 +42,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->somar(-37.7, 5), 2);
+            $resultado = $minhaClasseAvancado->somar(-37.7, 5);
 
             $this->assertEquals(-32.7, $resultado);
 
@@ -57,7 +57,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->somar(-37.761, 5.32), 2);
+            $resultado = $minhaClasseAvancado->somar(-37.761, 5.32);
             //round(-32.441, 2) = -32,44
 
             $this->assertEquals(-32.44, $resultado);
@@ -73,7 +73,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->somar(10, 70), 2);
+            $resultado = $minhaClasseAvancado->somar(10, 70);
 
             $this->assertEquals(80, $resultado);
 
@@ -88,7 +88,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->somar(-10, -70), 2);
+            $resultado = $minhaClasseAvancado->somar(-10, -70);
 
             $this->assertEquals(-80, $resultado);
 
@@ -103,7 +103,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->somar(10, 0, 2));
+            $resultado = $minhaClasseAvancado->somar(10, 0, 2);
 
             $this->assertEquals(10, $resultado);
 
@@ -135,7 +135,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->subtrair(-10, -5.0), 2);
+            $resultado = $minhaClasseAvancado->subtrair(-10, -5.0);
 
             $this->assertEquals(-5, $resultado);
 
@@ -150,7 +150,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->subtrair(-37.761, 5.32), 2);
+            $resultado = $minhaClasseAvancado->subtrair(-37.761, 5.32);
             //round(-43.081, 2) = -43.08
 
             $this->assertEquals(-43.08, $resultado);
@@ -166,7 +166,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->subtrair(70, 37), 2);
+            $resultado = $minhaClasseAvancado->subtrair(70, 37);
 
             $this->assertEquals(33, $resultado);
 
@@ -181,7 +181,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->subtrair(-70, -10), 2);
+            $resultado = $minhaClasseAvancado->subtrair(-70, -10);
 
             $this->assertEquals(-60, $resultado);
 
@@ -196,7 +196,7 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = round($minhaClasseAvancado->subtrair(0, 10), 2);
+            $resultado = $minhaClasseAvancado->subtrair(0, 10);
 
             $this->assertEquals(-10, $resultado);
 

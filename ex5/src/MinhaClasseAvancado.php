@@ -20,7 +20,7 @@ class MinhaClasseAvancado
                 throw new Exception("A informação passada está incorreta");
             }
 
-            return $a + $b;
+            return round(($a + $b), 2);
 
         } catch (Exception $e) {
             print_r($e->getMessage());
@@ -46,7 +46,7 @@ class MinhaClasseAvancado
                 throw new Exception("A informação passada está incorreta");
             }
 
-            return $a - $b;
+            return round(($a - $b), 2);
             
         } catch (Exception $e) {
             print_r($e->getMessage());
