@@ -18,6 +18,7 @@ class MinhaClasseAvancadoTest extends TestCase
 
     Para cada teste principal, há os seguintes testes:
         *Mista
+        *DecimalComplexo
         *Positiva
         *Negativa
         *Zero
@@ -31,7 +32,7 @@ class MinhaClasseAvancadoTest extends TestCase
         ....A informação passada está incorreta - ERRO: 0
         .....A informação passada está incorreta - ERRO: 0
         .                                                        10 / 10 (100%)
-        OK (10 tests, 10 assertions)
+        OK (12 tests, 12 assertions)
     */
 
 
@@ -41,8 +42,26 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->somar(-37.7, 5.3);
-            $this->assertEquals(-32.4, $resultado);
+            $resultado = round($minhaClasseAvancado->somar(-37.7, 5), 2);
+
+            $this->assertEquals(-32.7, $resultado);
+
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+            print_r($e->getCode());
+        }
+    }
+
+    public function testSomaCorretaDecimalComplexo()
+    {
+        try {
+            $minhaClasseAvancado = new MinhaClasseAvancado();
+
+            $resultado = round($minhaClasseAvancado->somar(-37.761, 5.32), 2);
+            //round(-32.441, 2) = -32,44
+
+            $this->assertEquals(-32.44, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -54,8 +73,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->somar(10, 70);
+            $resultado = round($minhaClasseAvancado->somar(10, 70), 2);
+
             $this->assertEquals(80, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -67,8 +88,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->somar(-10, -70);
+            $resultado = round($minhaClasseAvancado->somar(-10, -70), 2);
+
             $this->assertEquals(-80, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -80,8 +103,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->somar(10, 0);
+            $resultado = round($minhaClasseAvancado->somar(10, 0, 2));
+
             $this->assertEquals(10, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -94,7 +119,9 @@ class MinhaClasseAvancadoTest extends TestCase
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
             $resultado = $minhaClasseAvancado->somar(10, 'a');
+
             $this->assertEquals(0, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -108,8 +135,26 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->subtrair(-10, -5.0);
+            $resultado = round($minhaClasseAvancado->subtrair(-10, -5.0), 2);
+
             $this->assertEquals(-5, $resultado);
+
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+            print_r($e->getCode());
+        }
+    }
+
+    public function testSubtracaoCorretaDecimalComplexo()
+    {
+        try {
+            $minhaClasseAvancado = new MinhaClasseAvancado();
+
+            $resultado = round($minhaClasseAvancado->subtrair(-37.761, 5.32), 2);
+            //round(-43.081, 2) = -43.08
+
+            $this->assertEquals(-43.08, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -121,8 +166,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->subtrair(70, 37);
+            $resultado = round($minhaClasseAvancado->subtrair(70, 37), 2);
+
             $this->assertEquals(33, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -134,8 +181,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->subtrair(-70, -10);
+            $resultado = round($minhaClasseAvancado->subtrair(-70, -10), 2);
+
             $this->assertEquals(-60, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -147,8 +196,10 @@ class MinhaClasseAvancadoTest extends TestCase
         try {
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
-            $resultado = $minhaClasseAvancado->subtrair(0, 10);
+            $resultado = round($minhaClasseAvancado->subtrair(0, 10), 2);
+
             $this->assertEquals(-10, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
@@ -161,7 +212,9 @@ class MinhaClasseAvancadoTest extends TestCase
             $minhaClasseAvancado = new MinhaClasseAvancado();
 
             $resultado = $minhaClasseAvancado->subtrair(10, 'a');
+
             $this->assertEquals(0, $resultado);
+
         } catch (Exception $e) {
             print_r($e->getMessage());
             print_r($e->getCode());
