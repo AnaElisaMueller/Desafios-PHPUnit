@@ -1,6 +1,4 @@
 <?php
-// $a = floatval(str_replace(",", ".", $a));
-// $b = floatval(str_replace(",", ".", $b)); (colar pornto se colocado virgula )
 
 class MinhaClasseAvancado
 {
